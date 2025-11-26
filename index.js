@@ -1,4 +1,13 @@
-const token = //Enter your Git Token here; 
+let token ="" ; 
+
+  let tokeninput=document.getElementById("tokenname");
+  let savebtn=document.getElementById("tokmain");
+  savebtn.addEventListener("click",()=>{
+    token=tokeninput.value;
+  })
+
+ 
+  
 
 
 async function createRepo() {
@@ -13,7 +22,15 @@ async function createRepo() {
     },
     body: JSON.stringify({ name: name })
   });
-
+if (!token) {
+    alert("Please submit your GitHub token first!");
+    return;
+  }
+  let value = document.getElementById("repoName").value;
+  if (!value) {
+    alert("Repository name cannot be empty!");
+    return;
+  }
 
 
   let data = await response.json();

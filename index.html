@@ -4,11 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub API Repo Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="icon" type="image/png" href="/assets/GitHub-Logo.png">
+
 </head>
 <body>
-  <h3>Create GitHub Repo</h3>
-<input id="repoName" placeholder="Enter repo name">
-<button onclick="createRepo()">Create Repo</button>
+  <div id="maincont"></div>
+  <div id="loader">
+  <div class="spinner"></div>
+</div>
+
+  <div id="headerline"><h1 >CREATE GITHUB REPOSITORY</h1></div>
+  <hr id="hr">
+  <div id="input2"><input id="tokenname" placeholder="   ENTER YOUR GIT ACCOUNT TOKEN">
+  <button id="tokmain" >Submit</button></div>
+<div id="input"><input id="repoName" placeholder="   ENTER REPOSITORY NAME">
+<button onclick="createRepo()">Create Repo</button></div>
+
+</div>
+<div class="instructions">
+  <h2>How to Use This GitHub Repo Generator</h2>
+  <p>This tool allows you to instantly create a new GitHub repository using the GitHub API.</p>
+
+  <h3>Steps to Follow:</h3>
+  <ol>
+    <li>Enter a name for your new repository in the input box above.</li>
+    <li>Click on the <strong>Create Repo</strong> button.</li>
+    <li>You will be asked to authenticate using your GitHub Personal Access Token.</li>
+    <li>Once the request is successful, your repository will be created on GitHub instantly.</li>
+    <li>Open your GitHub account and you will see your new repo listed.</li>
+  </ol>
+
+  <h3>Important Notes:</h3>
+  <ul>
+    <li>You must already have a valid GitHub Personal Access Token with the correct permissions.</li>
+    <li>Make sure your internet connection is active.</li>
+    <li>The repository name cannot be empty.</li>
+    <li>If you enter a repo name that already exists, GitHub will return an error.</li>
+  </ul>
+
+  <h3>Security Warning:</h3>
+  <p>Never share your GitHub token publicly. Keep it private and delete it if you think it has been exposed.</p>
+</div>
+<div class="how-it-works">
+  <h2>How It Works</h2>
+  <p>This page uses the official <strong>GitHub REST API</strong> to create new repositories directly from your browser.</p>
+
+  <h3>Behind the Scenes:</h3>
+  <ul>
+    <li>When you type a repository name and click <strong>Create Repo</strong>, the page prepares a request.</li>
+    <li>It sends a <strong>POST</strong> request to:
+      <br><code>https://api.github.com/user/repos</code>
+    </li>
+    <li>Your GitHub Personal Access Token is added in the request header for authentication.</li>
+    <li>GitHub’s servers receive the request and check:
+      <ul>
+        <li>Is the token valid?</li>
+        <li>Does the token have permission to create repos?</li>
+        <li>Is the repo name available?</li>
+      </ul>
+    </li>
+    <li>If everything is correct, GitHub creates the new repository instantly.</li>
+    <li>The page then shows a confirmation message and logs the response in the console.</li>
+  </ul>
+
+  <h3>What the API Sends:</h3>
+  <p>The page sends a simple JSON object like this:</p>
+  <pre>
+{
+  "name": "your-repo-name"
+}
+  </pre>
+
+  <h3>What You Get Back:</h3>
+  <p>GitHub responds with details of the newly created repo, such as:</p>
+  <ul>
+    <li>Repository URL</li>
+    <li>Owner information</li>
+    <li>Visibility (public/private)</li>
+    <li>Creation time</li>
+  </ul>
+
+  <p>All this happens in just a few milliseconds.</p>
+</div>
+<label><a href="#headerline"><button id="up"><i class="fa-solid fa-arrow-up"></i></button></a></label>
 
 
 <script src="index.js"></script>

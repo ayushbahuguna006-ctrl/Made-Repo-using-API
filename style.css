@@ -1,0 +1,218 @@
+ #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgb(21, 21, 17);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 2s; 
+    z-index: 9999;
+  }
+
+  .spinner {
+    border: 5px solid red;
+    border-top: 5px solid #C5C7BC;
+    border-radius: 100%;
+    width: 20px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; display:none;}
+  }
+#headerline{
+  display:flex;
+  position: relative;
+  right: 12px;
+  justify-content: center;
+  color:rgb(157, 112, 199);
+  animation-name: head;
+  animation-timing-function: ease-in;
+  animation-duration: 2.5s;
+  animation-delay: 2s;
+  font-family:'quicksand';
+  height: 500px;
+  align-items: center;
+}
+#input{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+  position: relative;
+  top:50px;
+}
+
+#maincont{
+  height:700px;
+  position:absolute;
+  top:100px;
+  left:500px;
+}
+#up{
+  position: fixed;
+  top:660px;
+  left:1400px;
+  background-color: rgb(213, 179, 127);
+  z-index: 999;
+  height: 40px;
+  width: 50px;
+  transition-property: all;
+  transition-timing-function: ease-in;
+  color: rgb(179, 18, 18);
+}
+#up:hover{
+  background-color: aliceblue;
+
+}
+
+input{
+  height:33px;
+  width:400px;
+  font-size: 12px;
+  border-color:rgb(115, 115, 163);
+  border-style: solid;
+  border-width: 1px;
+  color: black;
+  border-radius: 5px;
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
+}
+#input2{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+  position: relative;
+  top:50px;
+}
+
+.how-it-works {
+  margin-top: 60px;
+  background:  rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 650px;
+  position: relative;
+  left: 700px;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+.how-it-works:hover{
+  border-color: red;
+  border-width: 4px;
+  border-style: solid;
+}
+
+.how-it-works h2 {
+  margin-bottom: 10px;
+}
+
+.how-it-works ul {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+#hr{
+  background-color: red;
+  height:0.5px;
+  width:20px;
+  position: relative;
+  bottom: 300px;
+  animation-name: line;
+  animation-timing-function: ease-in;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes line{
+  from{width:20px;}
+  to{width:500px;}
+}
+
+
+.instructions {
+  margin-top: 100px;
+  margin-left: 100px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 600px;
+  transition-property: all;
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
+}
+.instructions:hover{
+  border-color: red;
+  border-width: 4px;
+  border-style: solid;
+}
+
+.instructions h2 {
+  margin-bottom: 10px;
+}
+
+.instructions ol, 
+.instructions ul {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+#tokbut{
+  display: flex;
+  align-items: center;
+}
+body{
+  background-image:url(/assets/Body-Background-Image.jpg) ;
+  background-size: cover;
+  height: 100px;
+  background-position: center;
+  background-attachment:fixed;  
+}
+
+button{
+  width:60px;
+  color: white;
+  display: flex;
+  height:39px;
+  border-radius: 5px;
+  justify-content: center;
+  background-color:rgb(28, 28, 28);
+  transition-property: all;
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
+  position: relative;
+  bottom:1px;
+  align-items: center;
+
+  
+}
+
+button:hover{
+  width:70px;
+  background-color: darkgoldenrod;
+}
+input:hover{
+  width:430px;
+  border-color:rgb(229, 157, 50);
+  border-width: 4px;
+}
+@keyframes head{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
