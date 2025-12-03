@@ -8,7 +8,7 @@ Uses your Personal Access Token for authentication.
 
 Provides clear instructions and "how it works" explanation on the page.
 
-<h1>How to Use</h1>h1>
+<h1>How to Use</h1>
 
 Open the webpage.
 
